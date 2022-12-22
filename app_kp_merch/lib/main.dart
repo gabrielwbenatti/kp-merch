@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:app_kp_merch/src/modules/home/home_screen.dart';
+
 void main() {
   runApp(const AppKpMerch());
 }
@@ -9,6 +11,8 @@ class AppKpMerch extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp();
+    return const MaterialApp(
+      home: KpHomeScreen(),
+    );
   }
 }
