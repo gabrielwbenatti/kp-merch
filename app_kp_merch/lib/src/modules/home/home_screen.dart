@@ -1,3 +1,4 @@
+import 'package:app_kp_merch/src/widgets/kp_widgets.dart';
 import 'package:flutter/material.dart';
 
 import 'package:app_kp_merch/src/utils/kp_theme.dart';
@@ -10,6 +11,30 @@ class KpHomeScreen extends StatefulWidget {
 }
 
 class _KpHomeScreenState extends State<KpHomeScreen> {
+  List<Widget> listaCategorias = const [
+    KpCategoryCircle(
+      'Roupas',
+      (Icons.shopping_cart_checkout_sharp),
+      isFirst: true,
+    ),
+    KpCategoryCircle(
+      'Calçados',
+      (Icons.low_priority),
+    ),
+    KpCategoryCircle(
+      'Perfumaria',
+      (Icons.kebab_dining_sharp),
+    ),
+    KpCategoryCircle(
+      'Acessórios',
+      (Icons.join_full_sharp),
+    ),
+    KpCategoryCircle(
+      'Maquiagem',
+      (Icons.mark_as_unread_sharp),
+    ),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,12 +57,23 @@ class _KpHomeScreenState extends State<KpHomeScreen> {
             margin: EdgeInsets.only(
               top: KpTheme.kDefaultPadding,
             ),
-            color: Colors.blue,
+            color: KpTheme.kPrimaryColor,
             height: 190,
-            child: const Center(
-              child: Text('Carrossel'),
+            child: Center(
+              child: Text(
+                'Carrossel',
+                style: TextStyle(color: KpTheme.kPrimaryWhite),
+              ),
             ),
           ),
+          const KpSectionTitle('Categorias'),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Wrap(
+              children: listaCategorias,
+            ),
+          ),
+          const KpSectionTitle('Produtos Novos'),
         ],
       ),
     );
