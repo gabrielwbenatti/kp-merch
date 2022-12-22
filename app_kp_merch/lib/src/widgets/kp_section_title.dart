@@ -1,5 +1,6 @@
-import 'package:app_kp_merch/src/utils/kp_theme.dart';
 import 'package:flutter/material.dart';
+
+import 'package:app_kp_merch/src/utils/kp_theme.dart';
 
 class KpSectionTitle extends StatelessWidget {
   const KpSectionTitle(

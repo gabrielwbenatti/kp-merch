@@ -1,5 +1,4 @@
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/material.dart';
 
 class KpHomeScreen extends StatefulWidget {
   const KpHomeScreen({super.key});
@@ -11,6 +10,6 @@ class KpHomeScreen extends StatefulWidget {
 class _KpHomeScreenState extends State<KpHomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return const Scaffold();
   }
 }
