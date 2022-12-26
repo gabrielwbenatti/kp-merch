@@ -6,18 +6,68 @@ class KpCategoryCircle extends StatelessWidget {
   const KpCategoryCircle(
     this.text,
     this.icon, {
-    this.isFirst = false,
     this.isLast = false,
+    this.isFirst = false,
     super.key,
   });
 
   final String text;
   final IconData icon;
-  final bool isFirst;
   final bool isLast;
+  final bool isFirst;
 
   @override
   Widget build(BuildContext context) {
+    return _op2();
+  }
+
+  Widget _op2() {
+    return Container(
+      width: KpTheme.kDefaultPadding * 6,
+      margin: isLast
+          ? EdgeInsets.symmetric(horizontal: KpTheme.kDefaultPadding)
+          : EdgeInsets.only(left: KpTheme.kDefaultPadding),
+      padding: EdgeInsets.fromLTRB(
+        KpTheme.kDefaultPadding / 2,
+        KpTheme.kDefaultPadding,
+        KpTheme.kDefaultPadding / 2,
+        KpTheme.kDefaultPadding,
+      ),
+      decoration: BoxDecoration(
+        color: KpTheme.kPrimaryColor,
+        borderRadius: BorderRadius.circular(KpTheme.kDefaultRadius),
+      ),
+      child: Column(
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              color: KpTheme.kPrimaryColor,
+              shape: BoxShape.circle,
+            ),
+            margin: EdgeInsets.only(
+              bottom: KpTheme.kDefaultPadding,
+            ),
+            child: Icon(
+              icon,
+              size: 26.0,
+              color: KpTheme.kPrimaryWhite,
+            ),
+          ),
+          Text(
+            text,
+            overflow: TextOverflow.ellipsis,
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: KpTheme.kPrimaryWhite,
+              // fontSize: 16.0,
+            ),
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget _op1() {
     return Container(
       width: KpTheme.kDefaultPadding * 6,
       padding: isFirst
