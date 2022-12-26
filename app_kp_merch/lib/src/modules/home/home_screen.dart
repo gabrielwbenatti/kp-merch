@@ -32,6 +32,7 @@ class _KpHomeScreenState extends State<KpHomeScreen> {
     KpCategoryCircle(
       'Maquiagem',
       (Icons.mark_as_unread_sharp),
+      isLast: true,
     ),
   ];
 
@@ -40,6 +41,7 @@ class _KpHomeScreenState extends State<KpHomeScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: KpTheme.kPrimaryWhite,
+        elevation: 0.00,
         actions: [
           IconButton(
             onPressed: () {},
