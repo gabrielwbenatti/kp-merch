@@ -44,9 +44,7 @@ class KpCategoryCircle extends StatelessWidget {
               color: KpTheme.kPrimaryColor,
               shape: BoxShape.circle,
             ),
-            margin: EdgeInsets.only(
-              bottom: KpTheme.kDefaultPadding,
-            ),
+            margin: EdgeInsets.only(bottom: KpTheme.kDefaultPadding),
             child: Icon(
               icon,
               size: 26.0,
