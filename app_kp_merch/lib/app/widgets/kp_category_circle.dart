@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:app_kp_merch/src/utils/kp_theme.dart';
+import 'package:app_kp_merch/app/utils/kp_theme.dart';
 
 class KpCategoryCircle extends StatelessWidget {
   const KpCategoryCircle(

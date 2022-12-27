@@ -1,4 +1,4 @@
-import 'package:app_kp_merch/src/models/base_model.dart';
+import 'package:app_kp_merch/app/data/models/base_model.dart';
 
 class CategoryModel extends BaseModel {
   CategoryModel({

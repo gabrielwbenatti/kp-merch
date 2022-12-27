@@ -1,6 +1,6 @@
-import 'package:app_kp_merch/src/models/base_model.dart';
-import 'package:app_kp_merch/src/models/category_model.dart';
-import 'package:app_kp_merch/src/models/subcategory_model.dart';
+import 'package:app_kp_merch/app/data/models/base_model.dart';
+import 'package:app_kp_merch/app/data/models/category_model.dart';
+import 'package:app_kp_merch/app/data/models/subcategory_model.dart';
 
 class ProductModel extends BaseModel {
   ProductModel({

@@ -1,7 +1,7 @@
-import 'package:app_kp_merch/src/widgets/kp_widgets.dart';
+import 'package:app_kp_merch/app/widgets/kp_widgets.dart';
 import 'package:flutter/material.dart';
 
-import 'package:app_kp_merch/src/utils/kp_theme.dart';
+import 'package:app_kp_merch/app/utils/kp_theme.dart';
 
 class KpHomeScreen extends StatefulWidget {
   const KpHomeScreen({super.key});
@@ -53,35 +53,38 @@ class _KpHomeScreenState extends State<KpHomeScreen> {
         ],
       ),
       body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              margin: EdgeInsets.only(
-                top: KpTheme.kDefaultPadding,
-              ),
-              color: KpTheme.kPrimaryColor,
-              height: 190,
-              child: Center(
-                child: Text(
-                  'Carrossel',
-                  style: TextStyle(color: KpTheme.kPrimaryWhite),
+        child: Padding(
+          padding: EdgeInsets.only(bottom: KpTheme.kDefaultPadding),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                margin: EdgeInsets.only(
+                  top: KpTheme.kDefaultPadding,
+                ),
+                color: KpTheme.kPrimaryColor,
+                height: 190,
+                child: Center(
+                  child: Text(
+                    'Carrossel',
+                    style: TextStyle(color: KpTheme.kPrimaryWhite),
+                  ),
                 ),
               ),
-            ),
-            const KpSectionTitle('Categorias'),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Wrap(
-                children: listaCategorias,
+              const KpSectionTitle('Categorias'),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Wrap(
+                  children: listaCategorias,
+                ),
               ),
-            ),
-            const KpSectionTitle('Produtos Novos'),
-            const KpProductHorizontal('produto 1', 55),
-            const KpProductHorizontal('produto 2', 55),
-            const KpProductHorizontal('produto 3', 55),
-            const KpProductHorizontal('produto 4', 55),
-          ],
+              const KpSectionTitle('Produtos Novos'),
+              const KpProductHorizontal('produto 1', 55),
+              const KpProductHorizontal('produto 2', 55),
+              const KpProductHorizontal('produto 3', 55),
+              const KpProductHorizontal('produto 4', 55),
+            ],
+          ),
         ),
       ),
     );
