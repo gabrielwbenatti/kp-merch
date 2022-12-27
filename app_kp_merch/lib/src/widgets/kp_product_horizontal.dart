@@ -37,18 +37,18 @@ class KpProductHorizontal extends StatelessWidget {
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
+            children: [
               Text(
-                'name',
+                name,
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
-                style: /*const*/ TextStyle(
+                style: const TextStyle(
                   fontSize: 18.0,
                 ),
               ),
               Text(
-                'R\$ 999',
-                style: /*const*/ TextStyle(
+                'R\$ ${amount.toStringAsFixed(2)}',
+                style: const TextStyle(
                   fontSize: 16.0,
                 ),
               ),
