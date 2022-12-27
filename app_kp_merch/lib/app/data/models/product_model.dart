@@ -11,7 +11,8 @@ class ProductModel extends BaseModel {
     this.stock = 0,
     this.category,
     this.subCategory,
-    this.discount = 0.00,
+    this.originalAmount = 0.00,
+    // this.discount = 0.00,
   });
 
   String? id;
@@ -21,5 +22,6 @@ class ProductModel extends BaseModel {
   CategoryModel? category;
   SubCategoryModel? subCategory;
   double amount;
-  double discount;
+  double originalAmount;
+  // double discount;
 }
