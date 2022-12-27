@@ -19,7 +19,7 @@ class KpProductHorizontal extends StatelessWidget {
       color: KpTheme.kPrimaryWhite,
       padding: EdgeInsets.symmetric(
         horizontal: KpTheme.kDefaultPadding,
-        vertical: KpTheme.kDefaultPadding / 4,
+        vertical: KpTheme.kDefaultPadding / 2,
       ),
       child: Row(
         children: [
