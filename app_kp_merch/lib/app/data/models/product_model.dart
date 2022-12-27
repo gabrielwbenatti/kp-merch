@@ -12,6 +12,7 @@ class ProductModel extends BaseModel {
     this.category,
     this.subCategory,
     this.originalAmount = 0.00,
+    this.sizes,
     // this.discount = 0.00,
   });
 
@@ -23,5 +24,6 @@ class ProductModel extends BaseModel {
   SubCategoryModel? subCategory;
   double amount;
   double originalAmount;
+  List<int>? sizes;
   // double discount;
 }

@@ -30,34 +30,6 @@ class ProductTitle extends StatelessWidget {
             ),
           ),
         ),
-        Row(
-          children: [
-            Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: KpTheme.kDefaultPadding,
-              ),
-              child: Text(
-                'R\$ ${product.amount.toStringAsFixed(2)}',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20.0,
-                  color: KpTheme.kPrimaryBlack,
-                ),
-              ),
-            ),
-            product.amount != product.originalAmount
-                ? Text(
-                    'R\$ ${product.originalAmount.toStringAsFixed(2)}',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18.0,
-                      color: KpTheme.kPrimaryBlack.withOpacity(0.5),
-                      decoration: TextDecoration.lineThrough,
-                    ),
-                  )
-                : Container(),
-          ],
-        ),
       ],
     );
   }

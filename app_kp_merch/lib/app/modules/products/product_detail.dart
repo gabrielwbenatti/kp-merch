@@ -4,6 +4,8 @@ import 'package:app_kp_merch/app/data/models/product_model.dart';
 import 'package:app_kp_merch/app/modules/products/widgets/images_carousel_widget.dart';
 import 'package:app_kp_merch/app/utils/kp_theme.dart';
 
+import 'widgets/product_price.dart';
+import 'widgets/product_sizes_widget.dart';
 import 'widgets/product_title.dart';
 
 class ProductView extends StatelessWidget {
@@ -52,6 +54,8 @@ class ProductView extends StatelessWidget {
         children: [
           ImagesCarouselWidget(),
           ProductTitle(product),
+          ProductPrice(product),
+          ProductSizesWidget(product),
         ],
       ),
     );
