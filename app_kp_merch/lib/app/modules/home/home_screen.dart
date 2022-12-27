@@ -1,3 +1,5 @@
+import 'package:app_kp_merch/app/data/models/category_model.dart';
+import 'package:app_kp_merch/app/data/models/product_model.dart';
 import 'package:app_kp_merch/app/widgets/kp_widgets.dart';
 import 'package:flutter/material.dart';
 
@@ -11,35 +13,25 @@ class KpHomeScreen extends StatefulWidget {
 }
 
 class _KpHomeScreenState extends State<KpHomeScreen> {
-  List<Widget> listaCategorias = const [
-    KpCategoryCircle(
-      'Roupas',
-      (Icons.shopping_cart_checkout_sharp),
-      isFirst: true,
-    ),
-    KpCategoryCircle(
-      'Calçados',
-      (Icons.low_priority),
-    ),
-    KpCategoryCircle(
-      'Perfumaria',
-      (Icons.kebab_dining_sharp),
-    ),
-    KpCategoryCircle(
-      'Acessórios',
-      (Icons.join_full_sharp),
-    ),
-    KpCategoryCircle(
-      'Maquiagem',
-      (Icons.mark_as_unread_sharp),
-      isLast: true,
-    ),
+  List<CategoryModel> categories = [
+    CategoryModel(name: 'Roupas'),
+    CategoryModel(name: 'Calçados'),
+    CategoryModel(name: 'Perfumaria'),
+    CategoryModel(name: 'Acessórios'),
+    CategoryModel(name: 'Maquiagem'),
+  ];
+  List<ProductModel> products = [
+    ProductModel('Product 1 - eau de parfum 300ml', 55),
+    ProductModel('Product 2 - katy perry collections sandals ', 515),
+    ProductModel('Product 3', 155),
+    ProductModel('Product 4', 555),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: const Text('KP Merch'),
         backgroundColor: KpTheme.kPrimaryWhite,
         elevation: 0.00,
         actions: [
@@ -75,14 +67,21 @@ class _KpHomeScreenState extends State<KpHomeScreen> {
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Wrap(
-                  children: listaCategorias,
+                  children: categories
+                      .map((e) => KpCategoryCircle(
+                            e.name ?? 'Undefined',
+                            Icons.add_to_queue_sharp,
+                            isLast: (e == categories.last),
+                          ))
+                      .toList(),
                 ),
               ),
               const KpSectionTitle('Produtos Novos'),
-              const KpProductHorizontal('produto 1', 55),
-              const KpProductHorizontal('produto 2', 55),
-              const KpProductHorizontal('produto 3', 55),
-              const KpProductHorizontal('produto 4', 55),
+              Column(
+                children: products
+                    .map((e) => KpProductHorizontal(e.name, e.amount))
+                    .toList(),
+              ),
             ],
           ),
         ),
