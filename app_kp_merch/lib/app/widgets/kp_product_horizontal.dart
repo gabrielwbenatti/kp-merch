@@ -11,7 +11,6 @@ class KpProductHorizontal extends StatelessWidget {
   });
 
   final String name;
-
   final double amount;
 
   @override
@@ -35,24 +34,28 @@ class KpProductHorizontal extends StatelessWidget {
             width: 60,
             height: 60,
           ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                name,
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-                style: const TextStyle(
-                  fontSize: 18.0,
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  child: Text(
+                    name,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(
+                      fontSize: 18.0,
+                    ),
+                  ),
                 ),
-              ),
-              Text(
-                'R\$ ${amount.toStringAsFixed(2)}',
-                style: const TextStyle(
-                  fontSize: 16.0,
+                Text(
+                  'R\$ ${amount.toStringAsFixed(2)}',
+                  style: const TextStyle(
+                    fontSize: 16.0,
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ],
       ),
