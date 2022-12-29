@@ -22,7 +22,7 @@ class ProductTitle extends StatelessWidget {
             vertical: KpTheme.kDefaultPadding / 2,
           ),
           child: Text(
-            product.name.toUpperCase(),
+            product.name,
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 20.0,

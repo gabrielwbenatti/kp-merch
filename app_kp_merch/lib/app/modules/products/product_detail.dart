@@ -9,8 +9,8 @@ import 'widgets/product_price.dart';
 import 'widgets/product_sizes_widget.dart';
 import 'widgets/product_title.dart';
 
-class ProductView extends StatelessWidget {
-  const ProductView(
+class KpProductView extends StatelessWidget {
+  const KpProductView(
     this.product, {
     super.key,
   });
@@ -20,12 +20,12 @@ class ProductView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: _appBar(),
-      body: _body(),
+      appBar: _appBar(context),
+      body: _body(context),
     );
   }
 
-  PreferredSizeWidget _appBar() {
+  PreferredSizeWidget _appBar(BuildContext context) {
     return AppBar(
       backgroundColor: KpTheme.kPrimaryWhite,
       elevation: 0.00,
@@ -48,7 +48,7 @@ class ProductView extends StatelessWidget {
     );
   }
 
-  Widget _body() {
+  Widget _body(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -56,7 +56,7 @@ class ProductView extends StatelessWidget {
           ImagesCarouselWidget(),
           ProductTitle(product),
           ProductPrice(product),
-          ProductSizesWidget(product),
+          if (product.sizes != null) ProductSizesWidget(product),
           ProductDetailsWidget(product),
         ],
       ),
