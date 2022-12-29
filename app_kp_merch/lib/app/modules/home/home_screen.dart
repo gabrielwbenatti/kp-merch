@@ -24,10 +24,10 @@ class _KpHomeScreenState extends State<KpHomeScreen> {
     CategoryModel(name: 'Maquiagem'),
   ];
   List<ProductModel> products = [
-    ProductModel('Product 1 - eau de parfum 300ml', 55),
-    ProductModel('Product 2 - katy perry collections sandals ', 515),
-    ProductModel('Product 3', 155),
-    ProductModel('Product 4', 555),
+    ProductModel('Product 1 - eau de parfum 300ml', amount: 55),
+    ProductModel('Product 2 - katy perry collections sandals ', amount: 515),
+    ProductModel('Product 3', amount: 155),
+    ProductModel('Product 4', amount: 555),
   ];
 
   @override
