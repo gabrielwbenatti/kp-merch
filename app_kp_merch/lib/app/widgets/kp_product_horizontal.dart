@@ -1,17 +1,16 @@
 // import 'package:app_kp_merch/app/models/product_model.dart';
 import 'package:flutter/material.dart';
 
+import 'package:app_kp_merch/app/data/models/product_model.dart';
 import 'package:app_kp_merch/app/utils/kp_theme.dart';
 
 class KpProductHorizontal extends StatelessWidget {
   const KpProductHorizontal(
-    this.name,
-    this.amount, {
+    this.product, {
     super.key,
   });
 
-  final String name;
-  final double amount;
+  final ProductModel product;
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +39,7 @@ class KpProductHorizontal extends StatelessWidget {
               children: [
                 SizedBox(
                   child: Text(
-                    name,
+                    product.name,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: const TextStyle(
@@ -49,7 +48,7 @@ class KpProductHorizontal extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  'R\$ ${amount.toStringAsFixed(2)}',
+                  'R\$ ${product.amount.toStringAsFixed(2)}',
                   style: const TextStyle(
                     fontSize: 16.0,
                   ),

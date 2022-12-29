@@ -18,9 +18,7 @@ class NewProductsWidget extends StatelessWidget {
       children: [
         const KpSectionTitle('Produtos Novos'),
         Column(
-          children: products
-              .map((e) => KpProductHorizontal(e.name, e.amount))
-              .toList(),
+          children: products.map((e) => KpProductHorizontal(e)).toList(),
         ),
       ],
     );
