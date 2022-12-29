@@ -1,6 +1,7 @@
+import 'package:flutter/material.dart';
+
 import 'package:app_kp_merch/app/data/models/product_model.dart';
 import 'package:app_kp_merch/app/utils/kp_theme.dart';
-import 'package:flutter/material.dart';
 
 class ProductPrice extends StatelessWidget {
   const ProductPrice(
