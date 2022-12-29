@@ -57,7 +57,7 @@ class ProductView extends StatelessWidget {
           ProductTitle(product),
           ProductPrice(product),
           ProductSizesWidget(product),
-          ProductDetailsWidget(),
+          ProductDetailsWidget(product),
         ],
       ),
     );
