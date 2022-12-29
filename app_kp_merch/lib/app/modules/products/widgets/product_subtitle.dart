@@ -1,3 +1,4 @@
+import 'package:app_kp_merch/app/utils/kp_theme.dart';
 import 'package:flutter/material.dart';
 
 class ProductSubtitle extends StatelessWidget {
@@ -10,12 +11,16 @@ class ProductSubtitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
+    return Padding(
+      padding: EdgeInsets.symmetric(
+        horizontal: KpTheme.kDefaultPadding,
+        vertical: KpTheme.kDefaultPadding,
+      ),
       child: Text(
         text,
         style: const TextStyle(
           fontSize: 16.0,
+          letterSpacing: 1.2,
         ),
       ),
     );

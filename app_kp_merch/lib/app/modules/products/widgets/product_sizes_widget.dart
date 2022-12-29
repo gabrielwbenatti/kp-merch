@@ -1,6 +1,6 @@
-import 'package:app_kp_merch/app/utils/kp_theme.dart';
 import 'package:flutter/material.dart';
 
+import 'package:app_kp_merch/app/utils/kp_theme.dart';
 import 'package:app_kp_merch/app/data/models/product_model.dart';
 
 import 'product_subtitle.dart';
@@ -18,20 +18,14 @@ class ProductSizesWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: KpTheme.kDefaultPadding,
-            vertical: KpTheme.kDefaultPadding,
-          ),
-          child: const ProductSubtitle('Tamanhos'),
-        ),
+        const ProductSubtitle('Tamanhos'),
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Wrap(
             direction: Axis.horizontal,
             children: product.sizes!
-                .map((e) => ProductSizeItem(
-                      e,
+                .map((e) => ProductSizeItemWidget(
+                      e.size,
                       isLast: e == product.sizes!.last,
                     ))
                 .toList(),
@@ -42,14 +36,14 @@ class ProductSizesWidget extends StatelessWidget {
   }
 }
 
-class ProductSizeItem extends StatelessWidget {
-  const ProductSizeItem(
+class ProductSizeItemWidget extends StatelessWidget {
+  const ProductSizeItemWidget(
     this.size, {
     this.isLast = false,
     super.key,
   });
 
-  final int size;
+  final String size;
   final bool isLast;
 
   @override
@@ -63,7 +57,7 @@ class ProductSizeItem extends StatelessWidget {
           color: KpTheme.kPrimaryColor,
           borderRadius: BorderRadius.circular(KpTheme.kDefaultRadius)),
       child: Text(
-        size.toString(),
+        size,
         style: TextStyle(
           color: KpTheme.kPrimaryWhite,
           fontSize: 18.0,
