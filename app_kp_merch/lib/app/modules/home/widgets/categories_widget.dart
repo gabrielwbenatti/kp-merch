@@ -22,7 +22,7 @@ class CategoriesWidget extends StatelessWidget {
           child: Wrap(
             children: categories
                 .map((e) => KpCategoryCircle(
-                      e.name ?? 'Undefined',
+                      e,
                       Icons.add_to_queue_sharp,
                       isLast: (e == categories.last),
                     ))
