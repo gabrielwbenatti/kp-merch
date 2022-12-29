@@ -1,5 +1,6 @@
 import 'package:app_kp_merch/app/data/models/base_model.dart';
 import 'package:app_kp_merch/app/data/models/category_model.dart';
+import 'package:app_kp_merch/app/data/models/product_sizes_model.dart';
 import 'package:app_kp_merch/app/data/models/subcategory_model.dart';
 
 class ProductModel extends BaseModel {
@@ -24,6 +25,6 @@ class ProductModel extends BaseModel {
   SubCategoryModel? subCategory;
   double amount;
   double originalAmount;
-  List<int>? sizes;
+  List<ProductSizesModel>? sizes;
   // double discount;
 }
