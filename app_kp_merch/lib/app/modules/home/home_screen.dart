@@ -1,3 +1,4 @@
+import 'package:app_kp_merch/app/data/models/product_sizes_model.dart';
 import 'package:flutter/material.dart';
 
 import 'package:app_kp_merch/app/data/models/category_model.dart';
@@ -17,14 +18,26 @@ class KpHomeScreen extends StatefulWidget {
 
 class _KpHomeScreenState extends State<KpHomeScreen> {
   List<CategoryModel> categories = [
-    CategoryModel(name: 'Roupas'),
-    CategoryModel(name: 'Calçados'),
-    CategoryModel(name: 'Perfumaria'),
-    CategoryModel(name: 'Acessórios'),
-    CategoryModel(name: 'Maquiagem'),
+    CategoryModel('Roupas'),
+    CategoryModel('Calçados'),
+    CategoryModel('Perfumaria'),
+    CategoryModel('Acessórios'),
+    CategoryModel('Maquiagem'),
   ];
   List<ProductModel> products = [
-    ProductModel('Product 1 - eau de parfum 300ml', amount: 55),
+    ProductModel(
+      'THE HEIGHTTEN STRETCH BOOTIE',
+      amount: 525,
+      originalAmount: 875,
+      sizes: [
+        ProductSizesModel('5'),
+        ProductSizesModel('5.5'),
+        ProductSizesModel('6'),
+        ProductSizesModel('6.5'),
+        ProductSizesModel('7'),
+        ProductSizesModel('7.5'),
+      ],
+    ),
     ProductModel('Product 2 - katy perry collections sandals ', amount: 515),
     ProductModel('Product 3', amount: 155),
     ProductModel('Product 4', amount: 555),
