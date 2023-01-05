@@ -20,10 +20,10 @@ class KpSectionTitle extends StatelessWidget {
       ),
       child: Text(
         text,
-        style: const TextStyle(
-          fontSize: 22.0,
-          fontWeight: FontWeight.bold,
-        ),
+        style: Theme.of(context).textTheme.titleLarge?.copyWith(
+              color: KpTheme.kPrimaryBlack,
+              fontWeight: FontWeight.bold,
+            ),
       ),
     );
   }
