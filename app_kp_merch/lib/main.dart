@@ -1,3 +1,4 @@
+import 'package:app_kp_merch/app/utils/kp_theme.dart';
 import 'package:flutter/material.dart';
 
 import 'package:app_kp_merch/app/modules/home/home_screen.dart';
@@ -11,8 +12,14 @@ class AppKpMerch extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: KpHomeScreen(),
+    return MaterialApp(
+      theme: ThemeData(
+        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: KpTheme.kPrimaryColor,
+        ),
+      ),
+      home: const KpHomeScreen(),
     );
   }
 }

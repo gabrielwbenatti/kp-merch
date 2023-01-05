@@ -46,41 +46,33 @@ class _KpHomeScreenState extends State<KpHomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: _appBar(),
-      body: _body(),
-    );
-  }
-
-  Widget _body() {
-    return SingleChildScrollView(
-      child: Padding(
-        padding: EdgeInsets.only(bottom: KpTheme.kDefaultPadding),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const CarouselWidget(),
-            CategoriesWidget(categories),
-            NewProductsWidget(products),
-          ],
-        ),
+      appBar: AppBar(
+        title: const Text('KP Merch'),
+        backgroundColor: KpTheme.kPrimaryWhite,
+        elevation: 0.00,
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: Icon(
+              Icons.shopping_cart_outlined,
+              color: KpTheme.kPrimaryBlack,
+            ),
+          ),
+        ],
       ),
-    );
-  }
-
-  PreferredSizeWidget _appBar() {
-    return AppBar(
-      title: const Text('KP Merch'),
-      backgroundColor: KpTheme.kPrimaryWhite,
-      elevation: 0.00,
-      actions: [
-        IconButton(
-          onPressed: () {},
-          icon: Icon(
-            Icons.shopping_cart_outlined,
-            color: KpTheme.kPrimaryBlack,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.only(bottom: KpTheme.kDefaultPadding),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const CarouselWidget(),
+              CategoriesWidget(categories),
+              NewProductsWidget(products),
+            ],
           ),
         ),
-      ],
+      ),
     );
   }
 }
