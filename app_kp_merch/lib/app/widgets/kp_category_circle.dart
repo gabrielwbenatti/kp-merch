@@ -1,3 +1,4 @@
+import 'package:app_kp_merch/app/modules/categories_explore/categories_explore.dart';
 import 'package:flutter/material.dart';
 
 import 'package:app_kp_merch/app/data/models/category_model.dart';
@@ -27,7 +28,15 @@ class KpCategoryCircle extends StatelessWidget {
         color: KpTheme.kPrimaryColor,
         borderRadius: BorderRadius.circular(KpTheme.kDefaultRadius),
         child: InkWell(
-          onTap: () {},
+          onTap: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => KpCategoriesExplore(
+                  category,
+                ),
+              ),
+            );
+          },
           borderRadius: BorderRadius.circular(KpTheme.kDefaultRadius),
           child: Container(
             padding: EdgeInsets.only(
