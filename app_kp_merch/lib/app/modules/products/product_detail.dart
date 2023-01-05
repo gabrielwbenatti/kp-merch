@@ -27,6 +27,15 @@ class KpProductView extends StatelessWidget {
 
   PreferredSizeWidget _appBar(BuildContext context) {
     return AppBar(
+      leading: IconButton(
+        icon: Icon(
+          Icons.arrow_back_ios,
+          color: KpTheme.kPrimaryBlack,
+        ),
+        onPressed: () {
+          Navigator.of(context).pop();
+        },
+      ),
       backgroundColor: KpTheme.kPrimaryWhite,
       elevation: 0.00,
       actions: [
