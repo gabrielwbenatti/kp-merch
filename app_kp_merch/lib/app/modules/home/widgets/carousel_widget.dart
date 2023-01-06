@@ -11,12 +11,12 @@ class CarouselWidget extends StatelessWidget {
       margin: EdgeInsets.only(
         top: KpTheme.kDefaultPadding,
       ),
-      color: KpTheme.kPrimaryColor,
+      color: Theme.of(context).colorScheme.primary,
       height: 190,
       child: Center(
         child: Text(
           'Carrossel',
-          style: TextStyle(color: KpTheme.kPrimaryWhite),
+          style: TextStyle(color: Theme.of(context).colorScheme.onPrimary),
         ),
       ),
     );

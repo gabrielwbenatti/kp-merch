@@ -16,7 +16,7 @@ class AppKpMerch extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(
-          seedColor: KpTheme.kPrimaryColor,
+          seedColor: const Color(0xFFB52600),
         ),
       ),
       home: const KpHomeScreen(),

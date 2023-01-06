@@ -16,6 +16,7 @@ class KpProductHorizontal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      tileColor: Theme.of(context).colorScheme.surface,
       onTap: () {
         Navigator.of(context).push(
           MaterialPageRoute(
@@ -26,7 +27,7 @@ class KpProductHorizontal extends StatelessWidget {
       leading: Container(
         margin: EdgeInsets.only(right: KpTheme.kDefaultPadding / 2),
         decoration: BoxDecoration(
-          color: KpTheme.kPrimaryColor,
+          color: Theme.of(context).colorScheme.primary,
           borderRadius: BorderRadius.circular(
             KpTheme.kDefaultRadius / 2,
           ),

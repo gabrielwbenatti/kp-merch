@@ -21,21 +21,20 @@ class KpProductView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: KpTheme.kPrimaryWhite,
         elevation: 0.00,
         actions: [
           IconButton(
             onPressed: () {},
             icon: Icon(
               Icons.favorite_outline_rounded,
-              color: KpTheme.kPrimaryBlack,
+              color: Theme.of(context).colorScheme.onSurface,
             ),
           ),
           IconButton(
             onPressed: () {},
             icon: Icon(
               Icons.shopping_cart_outlined,
-              color: KpTheme.kPrimaryBlack,
+              color: Theme.of(context).colorScheme.onSurface,
             ),
           ),
         ],

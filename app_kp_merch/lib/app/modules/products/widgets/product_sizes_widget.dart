@@ -55,14 +55,14 @@ class ProductSizeItemWidget extends StatelessWidget {
       padding: EdgeInsets.all(KpTheme.kDefaultPadding / 2),
       width: KpTheme.kDefaultPadding * 3,
       decoration: BoxDecoration(
-        color: KpTheme.kPrimaryColor,
+        color: Theme.of(context).colorScheme.primary,
         borderRadius: BorderRadius.circular(KpTheme.kDefaultRadius),
       ),
       child: Center(
         child: Text(
           size,
           style: TextStyle(
-            color: KpTheme.kPrimaryWhite,
+            color: Theme.of(context).colorScheme.onPrimary,
             fontSize: 18.0,
           ),
         ),

@@ -26,7 +26,7 @@ class ProductTitle extends StatelessWidget {
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 20.0,
-              color: KpTheme.kPrimaryBlack,
+              color: Theme.of(context).colorScheme.onBackground,
             ),
           ),
         ),

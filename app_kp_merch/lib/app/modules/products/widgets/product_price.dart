@@ -24,7 +24,7 @@ class ProductPrice extends StatelessWidget {
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 20.0,
-              color: KpTheme.kPrimaryBlack,
+              color: Theme.of(context).colorScheme.onBackground,
             ),
           ),
         ),
@@ -34,7 +34,7 @@ class ProductPrice extends StatelessWidget {
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 18.0,
-                  color: KpTheme.kPrimaryBlack.withOpacity(0.5),
+                  color: Theme.of(context).colorScheme.outline,
                   decoration: TextDecoration.lineThrough,
                 ),
               )

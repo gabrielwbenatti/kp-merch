@@ -21,7 +21,7 @@ class KpSectionTitle extends StatelessWidget {
       child: Text(
         text,
         style: Theme.of(context).textTheme.titleLarge?.copyWith(
-              color: KpTheme.kPrimaryBlack,
+              color: Theme.of(context).colorScheme.onBackground,
               fontWeight: FontWeight.bold,
             ),
       ),

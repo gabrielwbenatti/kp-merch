@@ -9,7 +9,7 @@ class ProductSubtitle extends StatelessWidget {
   });
 
   final String text;
-
+ 
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -19,9 +19,8 @@ class ProductSubtitle extends StatelessWidget {
       ),
       child: Text(
         text,
-        style: const TextStyle(
-          fontSize: 16.0,
-          letterSpacing: 1.2,
+        style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+          color: Theme.of(context).colorScheme.onBackground,
         ),
       ),
     );

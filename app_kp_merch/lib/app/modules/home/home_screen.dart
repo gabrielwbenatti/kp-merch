@@ -48,16 +48,16 @@ class _KpHomeScreenState extends State<KpHomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: AppBar( 
         title: const Text('KP Merch'),
-        backgroundColor: KpTheme.kPrimaryWhite,
+        backgroundColor: Theme.of(context).colorScheme.background,
         elevation: 0.00,
         actions: [
           IconButton(
             onPressed: () {},
             icon: Icon(
               Icons.shopping_cart_outlined,
-              color: KpTheme.kPrimaryBlack,
+              color: Theme.of(context).colorScheme.onSurface,
             ),
           ),
         ],

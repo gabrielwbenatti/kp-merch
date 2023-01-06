@@ -23,6 +23,9 @@ class ProductDetailsWidget extends StatelessWidget {
           child: Text(
             product.description ?? 'Sem descrição',
             textAlign: TextAlign.justify,
+            style: TextStyle(
+              color: Theme.of(context).colorScheme.onBackground,
+            ),
           ),
         ),
       ],
