@@ -20,54 +20,37 @@ class KpProductView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: _appBar(context),
-      body: _body(context),
-    );
-  }
-
-  PreferredSizeWidget _appBar(BuildContext context) {
-    return AppBar(
-      leading: IconButton(
-        icon: Icon(
-          Icons.arrow_back_ios,
-          color: KpTheme.kPrimaryBlack,
-        ),
-        onPressed: () {
-          Navigator.of(context).pop();
-        },
-      ),
-      backgroundColor: KpTheme.kPrimaryWhite,
-      elevation: 0.00,
-      actions: [
-        IconButton(
-          onPressed: () {},
-          icon: Icon(
-            Icons.favorite_outline_rounded,
-            color: KpTheme.kPrimaryBlack,
+      appBar: AppBar(
+        backgroundColor: KpTheme.kPrimaryWhite,
+        elevation: 0.00,
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: Icon(
+              Icons.favorite_outline_rounded,
+              color: KpTheme.kPrimaryBlack,
+            ),
           ),
-        ),
-        IconButton(
-          onPressed: () {},
-          icon: Icon(
-            Icons.shopping_cart_outlined,
-            color: KpTheme.kPrimaryBlack,
+          IconButton(
+            onPressed: () {},
+            icon: Icon(
+              Icons.shopping_cart_outlined,
+              color: KpTheme.kPrimaryBlack,
+            ),
           ),
-        ),
-      ],
-    );
-  }
-
-  Widget _body(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          ImagesCarouselWidget(),
-          ProductTitle(product),
-          ProductPrice(product),
-          if (product.sizes != null) ProductSizesWidget(product),
-          ProductDetailsWidget(product),
         ],
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const ImagesCarouselWidget(),
+            ProductTitle(product),
+            ProductPrice(product),
+            if (product.sizes != null) ProductSizesWidget(product),
+            ProductDetailsWidget(product),
+          ],
+        ),
       ),
     );
   }

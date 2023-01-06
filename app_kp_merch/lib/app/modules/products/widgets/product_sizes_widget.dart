@@ -52,15 +52,19 @@ class ProductSizeItemWidget extends StatelessWidget {
       margin: isLast
           ? EdgeInsets.symmetric(horizontal: KpTheme.kDefaultPadding)
           : EdgeInsets.only(left: KpTheme.kDefaultPadding),
-      padding: EdgeInsets.all(KpTheme.kDefaultPadding),
+      padding: EdgeInsets.all(KpTheme.kDefaultPadding / 2),
+      width: KpTheme.kDefaultPadding * 3,
       decoration: BoxDecoration(
-          color: KpTheme.kPrimaryColor,
-          borderRadius: BorderRadius.circular(KpTheme.kDefaultRadius)),
-      child: Text(
-        size,
-        style: TextStyle(
-          color: KpTheme.kPrimaryWhite,
-          fontSize: 18.0,
+        color: KpTheme.kPrimaryColor,
+        borderRadius: BorderRadius.circular(KpTheme.kDefaultRadius),
+      ),
+      child: Center(
+        child: Text(
+          size,
+          style: TextStyle(
+            color: KpTheme.kPrimaryWhite,
+            fontSize: 18.0,
+          ),
         ),
       ),
     );

@@ -36,6 +36,8 @@ class _KpHomeScreenState extends State<KpHomeScreen> {
         ProductSizesModel('6.5'),
         ProductSizesModel('7'),
         ProductSizesModel('7.5'),
+        ProductSizesModel('8'),
+        ProductSizesModel('8.5'),
       ],
     ),
     ProductModel('Product 2 - katy perry collections sandals ', amount: 515),
