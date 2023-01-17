@@ -19,7 +19,7 @@ class ProductModel extends BaseModel {
     // this.discount = 0.00,
   });
 
-  String? id;
+  int? id;
   String name;
   String? description;
   int stock;
