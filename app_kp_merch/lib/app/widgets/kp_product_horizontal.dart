@@ -44,7 +44,7 @@ class KpProductHorizontal extends StatelessWidget {
         ),
       ),
       subtitle: Text(
-        'R\$ ${product.amount.toStringAsFixed(2)}',
+        'R\$ ${product.price.toStringAsFixed(2)}',
         style: const TextStyle(
           fontSize: 16.0,
         ),

@@ -6,7 +6,7 @@ import 'package:app_kp_merch/app/data/models/subcategory_model.dart';
 class ProductModel extends BaseModel {
   ProductModel(
     this.name, {
-    this.amount = 0.00,
+    this.price = 0.00,
     this.id,
     this.description,
     this.stock = 0,
@@ -23,7 +23,7 @@ class ProductModel extends BaseModel {
   int stock;
   CategoryModel? category;
   SubCategoryModel? subCategory;
-  double amount;
+  double price;
   double originalAmount;
   List<ProductSizesModel>? sizes;
   // double discount;

@@ -20,7 +20,7 @@ class ProductPrice extends StatelessWidget {
             horizontal: KpTheme.kDefaultPadding,
           ),
           child: Text(
-            'R\$ ${product.amount.toStringAsFixed(2)}',
+            'R\$ ${product.price.toStringAsFixed(2)}',
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 20.0,
@@ -28,7 +28,7 @@ class ProductPrice extends StatelessWidget {
             ),
           ),
         ),
-        product.amount != product.originalAmount
+        product.price != product.originalAmount
             ? Text(
                 'R\$ ${product.originalAmount.toStringAsFixed(2)}',
                 style: TextStyle(

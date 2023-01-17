@@ -27,7 +27,7 @@ class _KpHomeScreenState extends State<KpHomeScreen> {
   List<ProductModel> products = [
     ProductModel(
       'THE HEIGHTTEN STRETCH BOOTIE',
-      amount: 525,
+      price: 525,
       originalAmount: 875,
       sizes: [
         ProductSizesModel('5'),
@@ -40,15 +40,15 @@ class _KpHomeScreenState extends State<KpHomeScreen> {
         ProductSizesModel('8.5'),
       ],
     ),
-    ProductModel('Product 2 - katy perry collections sandals ', amount: 515),
-    ProductModel('Product 3', amount: 155),
-    ProductModel('Product 4', amount: 555),
+    ProductModel('Product 2 - katy perry collections sandals ', price: 515),
+    ProductModel('Product 3', price: 155),
+    ProductModel('Product 4', price: 555),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar( 
+      appBar: AppBar(
         title: const Text('KP Merch'),
         backgroundColor: Theme.of(context).colorScheme.background,
         elevation: 0.00,
