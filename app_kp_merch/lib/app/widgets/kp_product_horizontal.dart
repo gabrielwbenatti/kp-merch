@@ -34,6 +34,12 @@ class KpProductHorizontal extends StatelessWidget {
         ),
         width: 48,
         height: 48,
+        child: product.mainImage != null
+            ? Image.network(
+                product.mainImage!,
+                fit: BoxFit.cover,
+              )
+            : null,
       ),
       title: Text(
         product.name,

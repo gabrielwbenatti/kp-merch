@@ -17,6 +17,7 @@ class ProductModel extends BaseModel {
     this.originalAmount = 0.00,
     this.sizes,
     // this.discount = 0.00,
+    this.mainImage,
   });
 
   int? id;
@@ -28,6 +29,7 @@ class ProductModel extends BaseModel {
   double price;
   double originalAmount;
   List<ProductSizesModel>? sizes;
+  String? mainImage;
   // double discount;
 
   Map<String, dynamic> toMap() {
@@ -45,6 +47,7 @@ class ProductModel extends BaseModel {
       name: map['title'] ?? 'UNDEFINED',
       price: map['price'] ?? 0.00,
       description: map['description'] ?? 'UNDEFINED',
+      mainImage: map['image'] ?? '',
     );
   }
 

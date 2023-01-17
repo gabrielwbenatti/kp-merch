@@ -20,21 +20,25 @@ class _NewProductsWidgetState extends State<NewProductsWidget> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const KpSectionTitle('Produtos Novos'),
-        FutureBuilder<List<ProductModel>>(
-          future: productRepository.fetchProducts(),
-          initialData: const [],
-          builder: (context, snapshot) {
-            if (snapshot.connectionState == ConnectionState.done &&
-                snapshot.hasData) {
-              return _buildProducts(snapshot.data!);
-            }
+        Container(
+          color: Colors.transparent,
+          height: 400,
+          child: FutureBuilder<List<ProductModel>>(
+            future: productRepository.fetchProducts(),
+            initialData: const [],
+            builder: (context, snapshot) {
+              if (snapshot.connectionState == ConnectionState.done &&
+                  snapshot.hasData) {
+                return _buildProducts(snapshot.data!);
+              }
 
-            if (snapshot.hasError) {
-              _buildError(context);
-            }
+              if (snapshot.hasError) {
+                _buildError(context);
+              }
 
-            return _buildLoading();
-          },
+              return _buildLoading();
+            },
+          ),
         ),
       ],
     );
@@ -49,7 +53,7 @@ class _NewProductsWidgetState extends State<NewProductsWidget> {
   Widget _buildError(BuildContext context) {
     return Center(
       child: Text(
-        'Erro ao buscar categorias!',
+        'Erro ao buscar produtos!',
         style: TextStyle(
           color: Theme.of(context).colorScheme.error,
           fontWeight: FontWeight.bold,

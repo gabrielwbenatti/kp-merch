@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'package:app_kp_merch/app/data/models/product_model.dart';
 import 'package:app_kp_merch/app/modules/products/widgets/images_carousel_widget.dart';
-import 'package:app_kp_merch/app/utils/kp_theme.dart';
 
 import 'widgets/product_details_widget.dart';
 import 'widgets/product_price.dart';
@@ -43,7 +42,13 @@ class KpProductView extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const ImagesCarouselWidget(),
+            ImagesCarouselWidget([
+              product.mainImage!,
+              product.mainImage!,
+              product.mainImage!,
+              product.mainImage!,
+              product.mainImage!,
+            ]),
             ProductTitle(product),
             ProductPrice(product),
             if (product.sizes != null) ProductSizesWidget(product),
