@@ -48,7 +48,7 @@ class _KpHomeScreenState extends State<KpHomeScreen> {
             children: [
               const CarouselWidget(),
               CategoriesWidget(categories),
-              const NewProductsWidget(),
+              NewProductsWidget(),
             ],
           ),
         ),
