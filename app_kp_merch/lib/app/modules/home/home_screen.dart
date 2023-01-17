@@ -26,7 +26,7 @@ class _KpHomeScreenState extends State<KpHomeScreen> {
   ];
   List<ProductModel> products = [
     ProductModel(
-      'THE HEIGHTTEN STRETCH BOOTIE',
+      name: 'THE HEIGHTTEN STRETCH BOOTIE',
       price: 525,
       originalAmount: 875,
       sizes: [
@@ -40,9 +40,10 @@ class _KpHomeScreenState extends State<KpHomeScreen> {
         ProductSizesModel('8.5'),
       ],
     ),
-    ProductModel('Product 2 - katy perry collections sandals ', price: 515),
-    ProductModel('Product 3', price: 155),
-    ProductModel('Product 4', price: 555),
+    ProductModel(
+        name: 'Product 2 - katy perry collections sandals ', price: 515),
+    ProductModel(name: 'Product 3', price: 155),
+    ProductModel(name: 'Product 4', price: 555),
   ];
 
   @override
