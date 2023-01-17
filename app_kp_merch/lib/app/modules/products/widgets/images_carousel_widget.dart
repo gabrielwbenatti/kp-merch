@@ -14,10 +14,8 @@ class ImagesCarouselWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(
-        top: KpTheme.kDefaultPadding,
-      ),
-      color: Theme.of(context).colorScheme.primary,
+      margin: EdgeInsets.only(top: KpTheme.kDefaultPadding),
+      // color: Theme.of(context).colorScheme.primary,
       height: 290,
       child: CarouselSlider(
         options: CarouselOptions(

@@ -27,7 +27,7 @@ class KpProductHorizontal extends StatelessWidget {
       leading: Container(
         margin: EdgeInsets.only(right: KpTheme.kDefaultPadding / 2),
         decoration: BoxDecoration(
-          color: Theme.of(context).colorScheme.primary,
+          color: Colors.transparent,
           borderRadius: BorderRadius.circular(
             KpTheme.kDefaultRadius / 2,
           ),
@@ -37,9 +37,9 @@ class KpProductHorizontal extends StatelessWidget {
         child: product.mainImage != null
             ? Image.network(
                 product.mainImage!,
-                fit: BoxFit.cover,
+                fit: BoxFit.fitHeight,
               )
-            : null,
+            : const FlutterLogo(),
       ),
       title: Text(
         product.name,
