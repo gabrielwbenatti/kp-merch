@@ -17,13 +17,22 @@ class KpHomeScreen extends StatefulWidget {
 }
 
 class _KpHomeScreenState extends State<KpHomeScreen> {
-  List<CategoryModel> categories = [
-    CategoryModel('Roupas'),
-    CategoryModel('Calçados'),
-    CategoryModel('Perfumaria'),
-    CategoryModel('Acessórios'),
-    CategoryModel('Maquiagem'),
-  ];
+  late Future<List<ProductModel>> _futureProducts;
+  final _productRepository = ProductRepository();
+
+  // List<CategoryModel> categories = [
+  //   CategoryModel('Roupas'),
+  //   CategoryModel('Calçados'),
+  //   CategoryModel('Perfumaria'),
+  //   CategoryModel('Acessórios'),
+  //   CategoryModel('Maquiagem'),
+  // ];
+
+  @override
+  void initState() {
+    super.initState();
+    _futureProducts = _productRepository.fetchProducts();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -48,9 +57,31 @@ class _KpHomeScreenState extends State<KpHomeScreen> {
           children: [
             const CarouselWidget(),
             const KpSectionTitle('Categorias'),
-            CategoriesWidget(categories),
-            const KpSectionTitle('Produtos novos'),
-            const NewProductsWidget(),
+            // CategoriesWidget(categories),
+            FutureBuilder<List<ProductModel>>(
+              future: _futureProducts,
+              initialData: const [],
+              builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.done &&
+                    snapshot.hasData) {
+                  return NewProductsWidget(snapshot.data!);
+                }
+
+                if (snapshot.hasError) {
+                  return Center(
+                    child: Text(
+                      'Erro ao buscar produtos!',
+                      style: TextStyle(
+                        color: Theme.of(context).colorScheme.error,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  );
+                }
+
+                return Container();
+              },
+            ),
           ],
         ),
       ),
