@@ -1,8 +1,6 @@
-import 'package:app_kp_merch/app/data/models/product_sizes_model.dart';
 import 'package:flutter/material.dart';
 
 import 'package:app_kp_merch/app/data/models/category_model.dart';
-import 'package:app_kp_merch/app/data/models/product_model.dart';
 import 'package:app_kp_merch/app/utils/kp_theme.dart';
 
 import 'widgets/carousel_widget.dart';
@@ -23,27 +21,6 @@ class _KpHomeScreenState extends State<KpHomeScreen> {
     CategoryModel('Perfumaria'),
     CategoryModel('Acessórios'),
     CategoryModel('Maquiagem'),
-  ];
-  List<ProductModel> products = [
-    ProductModel(
-      name: 'THE HEIGHTTEN STRETCH BOOTIE',
-      price: 525,
-      originalAmount: 875,
-      sizes: [
-        ProductSizesModel('5'),
-        ProductSizesModel('5.5'),
-        ProductSizesModel('6'),
-        ProductSizesModel('6.5'),
-        ProductSizesModel('7'),
-        ProductSizesModel('7.5'),
-        ProductSizesModel('8'),
-        ProductSizesModel('8.5'),
-      ],
-    ),
-    ProductModel(
-        name: 'Product 2 - katy perry collections sandals ', price: 515),
-    ProductModel(name: 'Product 3', price: 155),
-    ProductModel(name: 'Product 4', price: 555),
   ];
 
   @override
@@ -71,7 +48,7 @@ class _KpHomeScreenState extends State<KpHomeScreen> {
             children: [
               const CarouselWidget(),
               CategoriesWidget(categories),
-              NewProductsWidget(products),
+              const NewProductsWidget(),
             ],
           ),
         ),
