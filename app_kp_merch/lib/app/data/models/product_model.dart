@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:app_kp_merch/app/data/models/base_model.dart';
 import 'package:app_kp_merch/app/data/models/category_model.dart';
 import 'package:app_kp_merch/app/data/models/product_sizes_model.dart';
@@ -45,4 +47,9 @@ class ProductModel extends BaseModel {
       description: map['description'] ?? 'UNDEFINED',
     );
   }
+
+  String toJson() => json.encode(toMap());
+
+  factory ProductModel.fromJson(String source) =>
+      ProductModel.fromMap(json.decode(source));
 }
