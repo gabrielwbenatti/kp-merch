@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 import 'package:app_kp_merch/app/data/models/category_model.dart';
-import 'package:app_kp_merch/app/utils/kp_theme.dart';
+import 'package:app_kp_merch/app/data/models/product_model.dart';
+import 'package:app_kp_merch/app/data/repository/product_repository.dart';
+import 'package:app_kp_merch/app/widgets/kp_widgets.dart';
 
 import 'widgets/carousel_widget.dart';
 import 'widgets/categories_widget.dart';
@@ -41,16 +43,15 @@ class _KpHomeScreenState extends State<KpHomeScreen> {
         ],
       ),
       body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.only(bottom: KpTheme.kDefaultPadding),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const CarouselWidget(),
-              CategoriesWidget(categories),
-              NewProductsWidget(),
-            ],
-          ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const CarouselWidget(),
+            const KpSectionTitle('Categorias'),
+            CategoriesWidget(categories),
+            const KpSectionTitle('Produtos novos'),
+            const NewProductsWidget(),
+          ],
         ),
       ),
     );

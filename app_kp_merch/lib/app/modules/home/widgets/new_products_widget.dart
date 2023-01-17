@@ -19,26 +19,21 @@ class _NewProductsWidgetState extends State<NewProductsWidget> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const KpSectionTitle('Produtos Novos'),
-        Container(
-          color: Colors.transparent,
-          height: 400,
-          child: FutureBuilder<List<ProductModel>>(
-            future: productRepository.fetchProducts(),
-            initialData: const [],
-            builder: (context, snapshot) {
-              if (snapshot.connectionState == ConnectionState.done &&
-                  snapshot.hasData) {
-                return _buildProducts(snapshot.data!);
-              }
+        FutureBuilder<List<ProductModel>>(
+          future: productRepository.fetchProducts(),
+          initialData: const [],
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.done &&
+                snapshot.hasData) {
+              return _buildProducts(snapshot.data!);
+            }
 
-              if (snapshot.hasError) {
-                _buildError(context);
-              }
+            if (snapshot.hasError) {
+              _buildError(context);
+            }
 
-              return _buildLoading();
-            },
-          ),
+            return _buildLoading();
+          },
         ),
       ],
     );
@@ -64,7 +59,8 @@ class _NewProductsWidgetState extends State<NewProductsWidget> {
 
   ListView _buildProducts(List<ProductModel> products) {
     return ListView.builder(
-      itemCount: products.length,
+      shrinkWrap: true,
+      itemCount: products.length > 6 ? 6 : products.length,
       itemBuilder: (context, index) {
         final product = products[index];
         return KpProductHorizontal(product);
