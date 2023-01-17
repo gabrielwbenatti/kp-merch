@@ -1,4 +1,3 @@
-import 'package:app_kp_merch/app/utils/kp_theme.dart';
 import 'package:flutter/material.dart';
 
 import 'package:app_kp_merch/app/modules/home/home_screen.dart';
