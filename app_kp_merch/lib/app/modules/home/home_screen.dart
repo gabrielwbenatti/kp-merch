@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 
-import 'package:app_kp_merch/app/data/models/category_model.dart';
 import 'package:app_kp_merch/app/data/models/product_model.dart';
 import 'package:app_kp_merch/app/data/repository/product_repository.dart';
 import 'package:app_kp_merch/app/widgets/kp_widgets.dart';
 
 import 'widgets/carousel_widget.dart';
-import 'widgets/categories_widget.dart';
 import 'widgets/new_products_widget.dart';
 
 class KpHomeScreen extends StatefulWidget {

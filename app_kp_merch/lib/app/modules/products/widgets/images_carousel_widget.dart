@@ -1,6 +1,6 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:app_kp_merch/app/utils/kp_theme.dart';
 
 class ImagesCarouselWidget extends StatelessWidget {
