@@ -11,17 +11,13 @@ class CategoryModel extends BaseModel {
   String? id;
   String name;
 
-  Map<String, dynamic> toMap() {
-    return <String, dynamic>{
-      'id': id,
-      'name': name,
-    };
+  String toMap() {
+    return name;
   }
 
-  factory CategoryModel.fromMap(Map<String, dynamic> map) {
+  factory CategoryModel.fromMap(String name) {
     return CategoryModel(
-      id: map['id'],
-      name: map['name'] ?? 'UNDEFINED',
+      name: name.toUpperCase(),
     );
   }
 
