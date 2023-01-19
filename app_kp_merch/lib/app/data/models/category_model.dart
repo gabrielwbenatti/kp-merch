@@ -17,7 +17,7 @@ class CategoryModel extends BaseModel {
 
   factory CategoryModel.fromMap(String name) {
     return CategoryModel(
-      name: name.toUpperCase(),
+      name: name,
     );
   }
 
