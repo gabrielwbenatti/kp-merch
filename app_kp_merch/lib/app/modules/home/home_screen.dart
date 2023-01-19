@@ -1,4 +1,5 @@
 import 'package:app_kp_merch/app/modules/home/widgets/categories_widget.dart';
+import 'package:app_kp_merch/app/utils/kp_theme.dart';
 import 'package:flutter/material.dart';
 
 import 'package:app_kp_merch/app/data/models/category_model.dart';
@@ -49,59 +50,62 @@ class _KpHomeScreenState extends State<KpHomeScreen> {
         ],
       ),
       body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const CarouselWidget(),
-            FutureBuilder<List<CategoryModel>>(
-              future: _futureCategories,
-              initialData: const [],
-              builder: (context, snapshot) {
-                if (snapshot.connectionState == ConnectionState.done &&
-                    snapshot.hasData) {
-                  return CategoriesWidget(snapshot.data!);
-                }
+        child: Padding(
+          padding: EdgeInsets.only(bottom: KpTheme.kDefaultPadding),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const CarouselWidget(),
+              FutureBuilder<List<CategoryModel>>(
+                future: _futureCategories,
+                initialData: const [],
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.done &&
+                      snapshot.hasData) {
+                    return CategoriesWidget(snapshot.data!);
+                  }
 
-                if (snapshot.hasError) {
-                  return Center(
-                    child: Text(
-                      'Erro ao buscar categorias!',
-                      style: TextStyle(
-                        color: Theme.of(context).colorScheme.error,
-                        fontWeight: FontWeight.bold,
+                  if (snapshot.hasError) {
+                    return Center(
+                      child: Text(
+                        'Erro ao buscar categorias!',
+                        style: TextStyle(
+                          color: Theme.of(context).colorScheme.error,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
-                    ),
-                  );
-                }
+                    );
+                  }
 
-                return Container();
-              },
-            ),
-            FutureBuilder<List<ProductModel>>(
-              future: _futureProducts,
-              initialData: const [],
-              builder: (context, snapshot) {
-                if (snapshot.connectionState == ConnectionState.done &&
-                    snapshot.hasData) {
-                  return NewProductsWidget(snapshot.data!);
-                }
+                  return Container();
+                },
+              ),
+              FutureBuilder<List<ProductModel>>(
+                future: _futureProducts,
+                initialData: const [],
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.done &&
+                      snapshot.hasData) {
+                    return NewProductsWidget(snapshot.data!);
+                  }
 
-                if (snapshot.hasError) {
-                  return Center(
-                    child: Text(
-                      'Erro ao buscar produtos!',
-                      style: TextStyle(
-                        color: Theme.of(context).colorScheme.error,
-                        fontWeight: FontWeight.bold,
+                  if (snapshot.hasError) {
+                    return Center(
+                      child: Text(
+                        'Erro ao buscar produtos!',
+                        style: TextStyle(
+                          color: Theme.of(context).colorScheme.error,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
-                    ),
-                  );
-                }
+                    );
+                  }
 
-                return Container();
-              },
-            ),
-          ],
+                  return Container();
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );
