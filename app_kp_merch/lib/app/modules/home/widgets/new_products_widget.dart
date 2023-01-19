@@ -19,6 +19,7 @@ class NewProductsWidget extends StatelessWidget {
         const KpSectionTitle('Produtos novos'),
         ListView.builder(
           shrinkWrap: true,
+          physics: const NeverScrollableScrollPhysics(),
           itemCount: products.length > 6 ? 6 : products.length,
           itemBuilder: (context, index) {
             final product = products[index];
