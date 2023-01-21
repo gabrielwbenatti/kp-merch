@@ -20,7 +20,7 @@ class NewProductsWidget extends StatelessWidget {
         ListView.builder(
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
-          itemCount: products.length > 6 ? 6 : products.length,
+          itemCount: products.length,
           itemBuilder: (context, index) {
             final product = products[index];
             return KpProductHorizontal(product);

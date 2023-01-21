@@ -5,11 +5,13 @@ import 'package:dio/dio.dart';
 class ProductRepository {
   final dio = Dio();
 
-  Future<List<ProductModel>> fetchProducts() async {
+  Future<List<ProductModel>> fetchProducts({
+    Map<String, dynamic>? parameters,
+  }) async {
     try {
       final response = await dio.get(
         '${KpMerchApi.BASE_URL}/products',
-        queryParameters: {},
+        queryParameters: parameters,
       );
       final list = response.data as List;
       return list.map((product) => ProductModel.fromMap(product)).toList();

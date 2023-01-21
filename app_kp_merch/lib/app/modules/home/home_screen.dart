@@ -28,7 +28,9 @@ class _KpHomeScreenState extends State<KpHomeScreen> {
   @override
   void initState() {
     super.initState();
-    _futureProducts = _productRepository.fetchProducts();
+    _futureProducts = _productRepository.fetchProducts(parameters: {
+      "limit": 6,
+    });
     _futureCategories = _categoryRepository.fetchCategories();
   }
 
