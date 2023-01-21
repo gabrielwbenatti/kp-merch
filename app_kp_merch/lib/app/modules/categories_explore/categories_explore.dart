@@ -47,9 +47,7 @@ class _KpCategoriesExploreState extends State<KpCategoriesExplore> {
               builder: (context, snapshot) {
                 if (snapshot.hasData &&
                     snapshot.connectionState == ConnectionState.done) {
-                  for (var product in snapshot.data!) {
-                    return KpProductHorizontal(product);
-                  }
+                  return buildProducts(snapshot.data ?? []);
                 }
 
                 if (snapshot.hasError) {
@@ -64,12 +62,30 @@ class _KpCategoriesExploreState extends State<KpCategoriesExplore> {
                   );
                 }
 
-                return const CircularProgressIndicator();
+                return Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: const [
+                    CircularProgressIndicator(),
+                  ],
+                );
               },
             ),
           ],
         ),
       ),
+    );
+  }
+
+  Widget buildProducts(List<ProductModel> products) {
+    return ListView.builder(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      itemCount: products.length,
+      itemBuilder: ((context, index) {
+        final product = products[index];
+
+        return KpProductHorizontal(product);
+      }),
     );
   }
 }
