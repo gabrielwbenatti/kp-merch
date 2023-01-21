@@ -37,7 +37,6 @@ class _KpHomeScreenState extends State<KpHomeScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('KP Merch'),
-        backgroundColor: Theme.of(context).colorScheme.background,
         elevation: 0.00,
         actions: [
           IconButton(
@@ -92,7 +91,7 @@ class _KpHomeScreenState extends State<KpHomeScreen> {
                   if (snapshot.hasError) {
                     return Center(
                       child: Text(
-                        'Erro ao buscar produtos!',
+                        'Erro ao buscar produtos! \n ${snapshot.error!}',
                         style: TextStyle(
                           color: Theme.of(context).colorScheme.error,
                           fontWeight: FontWeight.bold,

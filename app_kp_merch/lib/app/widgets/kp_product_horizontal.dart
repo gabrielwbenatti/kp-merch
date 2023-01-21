@@ -45,14 +45,16 @@ class KpProductHorizontal extends StatelessWidget {
         product.name,
         maxLines: 1,
         overflow: TextOverflow.ellipsis,
-        style: const TextStyle(
+        style: TextStyle(
           fontSize: 18.0,
+          color: Theme.of(context).colorScheme.onSurface,
         ),
       ),
       subtitle: Text(
         'R\$ ${product.price.toStringAsFixed(2)}',
         style: const TextStyle(
           fontSize: 16.0,
+          //color: Theme.of(context).colorScheme.onSurfaceVariant,
         ),
       ),
     );

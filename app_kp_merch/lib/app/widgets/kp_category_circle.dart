@@ -25,7 +25,7 @@ class KpCategoryCircle extends StatelessWidget {
           ? EdgeInsets.symmetric(horizontal: KpTheme.kDefaultPadding)
           : EdgeInsets.only(left: KpTheme.kDefaultPadding),
       child: Material(
-        color: Theme.of(context).colorScheme.primary,
+        color: Theme.of(context).colorScheme.primaryContainer,
         borderRadius: BorderRadius.circular(KpTheme.kDefaultRadius),
         child: InkWell(
           onTap: () {
@@ -56,7 +56,7 @@ class KpCategoryCircle extends StatelessWidget {
                   child: Icon(
                     icon,
                     size: 26.0,
-                    color: Theme.of(context).colorScheme.onPrimary,
+                    color: Theme.of(context).colorScheme.onPrimaryContainer,
                   ),
                 ),
                 Text(
@@ -64,7 +64,7 @@ class KpCategoryCircle extends StatelessWidget {
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    color: Theme.of(context).colorScheme.onPrimary,
+                    color: Theme.of(context).colorScheme.onPrimaryContainer,
                     // fontSize: 16.0,
                   ),
                 )
