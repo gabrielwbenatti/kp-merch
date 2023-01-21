@@ -23,11 +23,11 @@ class ProductModel extends BaseModel {
   int? id;
   String name;
   String? description;
-  int stock;
+  num stock;
   CategoryModel? category;
   SubCategoryModel? subCategory;
-  double price;
-  double originalAmount;
+  num price;
+  num originalAmount;
   List<ProductSizesModel>? sizes;
   String? mainImage;
   // double discount;
