@@ -62,11 +62,8 @@ class _KpCategoriesExploreState extends State<KpCategoriesExplore> {
                   );
                 }
 
-                return Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: const [
-                    CircularProgressIndicator(),
-                  ],
+                return const Center(
+                  child: CircularProgressIndicator(),
                 );
               },
             ),
