@@ -16,7 +16,7 @@ class CategoriesWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const KpSectionTitle('Produtos novos'),
+        const KpSectionTitle('Categorias'),
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Wrap(
