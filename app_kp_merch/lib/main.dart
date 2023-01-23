@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:app_kp_merch/app/modules/home/home_screen.dart';
+import 'package:app_kp_merch/app/modules/home/kp_home_screen.dart';
 
 void main() {
   runApp(const AppKpMerch());
