@@ -2,11 +2,11 @@ import 'package:app_kp_merch/app/data/models/category_model.dart';
 import 'package:app_kp_merch/app/data/models/product_model.dart';
 import 'package:app_kp_merch/app/data/repository/category_repository.dart';
 import 'package:app_kp_merch/app/utils/kp_theme.dart';
-import 'package:app_kp_merch/app/widgets/kp_widgets.dart';
+import 'package:app_kp_merch/app/common/kp_widgets.dart';
 import 'package:flutter/material.dart';
 
-class KpCategoriesExplore extends StatefulWidget {
-  const KpCategoriesExplore(
+class KpCategoriesExploreScreen extends StatefulWidget {
+  const KpCategoriesExploreScreen(
     this.category, {
     super.key,
   });
@@ -14,10 +14,11 @@ class KpCategoriesExplore extends StatefulWidget {
   final CategoryModel category;
 
   @override
-  State<KpCategoriesExplore> createState() => _KpCategoriesExploreState();
+  State<KpCategoriesExploreScreen> createState() =>
+      _KpCategoriesExploreScreenState();
 }
 
-class _KpCategoriesExploreState extends State<KpCategoriesExplore> {
+class _KpCategoriesExploreScreenState extends State<KpCategoriesExploreScreen> {
   late Future<List<ProductModel>> _future;
   final _repository = CategoryRepository();
 

@@ -1,4 +1,4 @@
-import 'package:app_kp_merch/app/modules/categories_explore/categories_explore.dart';
+import 'package:app_kp_merch/app/modules/category/kp_categories_explore_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'package:app_kp_merch/app/data/models/category_model.dart';
@@ -31,7 +31,7 @@ class KpCategoryCircle extends StatelessWidget {
           onTap: () {
             Navigator.of(context).push(
               MaterialPageRoute(
-                builder: (context) => KpCategoriesExplore(
+                builder: (context) => KpCategoriesExploreScreen(
                   category,
                 ),
               ),

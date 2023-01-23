@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:app_kp_merch/app/data/models/category_model.dart';
-import 'package:app_kp_merch/app/widgets/kp_widgets.dart';
+import 'package:app_kp_merch/app/common/kp_widgets.dart';
 
 class CategoriesWidget extends StatelessWidget {
   const CategoriesWidget(

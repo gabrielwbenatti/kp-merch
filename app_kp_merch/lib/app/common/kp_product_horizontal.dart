@@ -1,5 +1,5 @@
 // import 'package:app_kp_merch/app/models/product_model.dart';
-import 'package:app_kp_merch/app/modules/products/product_detail.dart';
+import 'package:app_kp_merch/app/modules/product/kp_product_detail_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'package:app_kp_merch/app/data/models/product_model.dart';
@@ -20,7 +20,7 @@ class KpProductHorizontal extends StatelessWidget {
       onTap: () {
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (context) => KpProductView(product),
+            builder: (context) => KpProductDetailScreen(product),
           ),
         );
       },

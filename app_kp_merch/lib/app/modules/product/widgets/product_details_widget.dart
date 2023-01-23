@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:app_kp_merch/app/data/models/product_model.dart';
-import 'package:app_kp_merch/app/modules/products/widgets/product_subtitle.dart';
+import 'package:app_kp_merch/app/modules/product/widgets/product_subtitle.dart';
 import 'package:app_kp_merch/app/utils/kp_theme.dart';
 
 class ProductDetailsWidget extends StatelessWidget {

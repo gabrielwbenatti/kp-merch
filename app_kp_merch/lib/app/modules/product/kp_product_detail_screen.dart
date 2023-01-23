@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
 import 'package:app_kp_merch/app/data/models/product_model.dart';
-import 'package:app_kp_merch/app/modules/products/widgets/images_carousel_widget.dart';
+import 'package:app_kp_merch/app/modules/product/widgets/images_carousel_widget.dart';
 
 import 'widgets/product_details_widget.dart';
 import 'widgets/product_price.dart';
 import 'widgets/product_sizes_widget.dart';
 import 'widgets/product_title.dart';
 
-class KpProductView extends StatelessWidget {
-  const KpProductView(
+class KpProductDetailScreen extends StatelessWidget {
+  const KpProductDetailScreen(
     this.product, {
     super.key,
   });
