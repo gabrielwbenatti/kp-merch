@@ -25,7 +25,7 @@ class ProductSizesWidget extends StatelessWidget {
             direction: Axis.horizontal,
             children: product.sizes!
                 .map((e) => ProductSizeItemWidget(
-                      e.size,
+                      e.size.toString(),
                       isLast: e == product.sizes!.last,
                     ))
                 .toList(),

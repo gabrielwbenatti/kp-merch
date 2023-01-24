@@ -6,6 +6,6 @@ class ProductSizesModel extends BaseModel {
     this.stock = 0,
   });
 
-  String size;
+  num size;
   int stock;
 }
