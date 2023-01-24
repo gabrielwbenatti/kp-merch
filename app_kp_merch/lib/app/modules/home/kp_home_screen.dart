@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'package:app_kp_merch/app/modules/cart/kp_cart_screen.dart';
 import 'package:app_kp_merch/app/modules/home/widgets/categories_widget.dart';
 import 'package:app_kp_merch/app/utils/kp_theme.dart';
 import 'package:app_kp_merch/app/data/models/category_model.dart';
@@ -41,7 +42,14 @@ class _KpHomeScreenState extends State<KpHomeScreen> {
         elevation: 0.00,
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const KpCartScreen(),
+                ),
+              );
+            },
             icon: Icon(
               Icons.shopping_cart_outlined,
               color: Theme.of(context).colorScheme.onSurface,
