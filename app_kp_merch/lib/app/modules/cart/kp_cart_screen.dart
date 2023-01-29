@@ -1,3 +1,4 @@
+import 'package:app_kp_merch/app/common/kp_section_title.dart';
 import 'package:flutter/material.dart';
 
 import 'package:app_kp_merch/app/common/kp_large_button.dart';
@@ -17,7 +18,14 @@ class KpCartScreen extends StatefulWidget {
 class _KpCartScreenState extends State<KpCartScreen> {
   @override
   Widget build(BuildContext context) {
-    int itemCount = 12;
+    final List<CartItemModel> items = [
+      CartItemModel(product: ProductModel(name: 'teste 1')),
+      CartItemModel(product: ProductModel(name: 'teste 2')),
+      CartItemModel(product: ProductModel(name: 'teste 3')),
+      CartItemModel(product: ProductModel(name: 'teste 4')),
+      CartItemModel(product: ProductModel(name: 'teste 5')),
+      CartItemModel(product: ProductModel(name: 'teste 6')),
+    ];
 
     Widget _buildTotalPanel() {
       return Positioned(
@@ -59,7 +67,7 @@ class _KpCartScreenState extends State<KpCartScreen> {
             ListView.builder(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
-              itemCount: itemCount,
+              itemCount: items.length,
               itemBuilder: (context, index) {
                 final product = ProductModel(
                   name: 'name $index',
@@ -73,7 +81,7 @@ class _KpCartScreenState extends State<KpCartScreen> {
 
                 return KpCartItem(
                   cartItem,
-                  isLast: index == (itemCount - 1),
+                  isLast: index == (items.length - 1),
                 );
               },
             ),
@@ -91,10 +99,46 @@ class _KpCartScreenState extends State<KpCartScreen> {
           'Meu Carrinho',
         ),
       ),
-      body: Stack(
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          _buildItemsList(),
-          _buildTotalPanel(),
+          Container(
+            padding: EdgeInsets.only(
+              left: KpTheme.kDefaultPadding,
+              right: KpTheme.kDefaultPadding,
+              top: (KpTheme.kDefaultPadding / 2),
+              bottom: (KpTheme.kDefaultPadding / 2),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Resumo do Pedido",
+                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                        color: Theme.of(context).colorScheme.onSurface,
+                        fontWeight: FontWeight.bold,
+                      ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: const [
+                    Text("Total do pedido"),
+                    Text("R\$ 271,66"),
+                  ],
+                ),
+                Text("${items.length} ${items.length == 1 ? 'item' : 'itens'}"),
+              ],
+            ),
+          ),
+          Expanded(
+            child: ListView.builder(
+              padding: EdgeInsets.only(bottom: KpTheme.kDefaultPadding),
+              itemBuilder: (context, index) {
+                return KpCartItem(items[index]);
+              },
+              itemCount: items.length,
+            ),
+          ),
         ],
       ),
     );
