@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:app_kp_merch/app/data/models/product_model.dart';
+import 'package:app_kp_merch/app/common/kp_large_button.dart';
+import 'package:app_kp_merch/app/modules/cart/kp_cart_screen.dart';
 import 'package:app_kp_merch/app/modules/product/widgets/images_carousel_widget.dart';
 
 import 'widgets/product_details_widget.dart';
@@ -30,7 +32,12 @@ class KpProductDetailScreen extends StatelessWidget {
             ),
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const KpCartScreen(),
+              ),
+            ),
             icon: Icon(
               Icons.shopping_cart_outlined,
               color: Theme.of(context).colorScheme.onSurface,
@@ -53,6 +60,11 @@ class KpProductDetailScreen extends StatelessWidget {
             ProductPrice(product),
             if (product.sizes != null) ProductSizesWidget(product),
             ProductDetailsWidget(product),
+            KpLargeButton(
+              "Adicionar ao Carrinho",
+              icon: Icons.shopping_cart_outlined,
+              onPressed: () {},
+            ),
           ],
         ),
       ),
