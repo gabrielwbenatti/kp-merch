@@ -1,4 +1,3 @@
-import 'package:app_kp_merch/app/common/kp_section_title.dart';
 import 'package:flutter/material.dart';
 
 import 'package:app_kp_merch/app/common/kp_large_button.dart';
@@ -19,12 +18,24 @@ class _KpCartScreenState extends State<KpCartScreen> {
   @override
   Widget build(BuildContext context) {
     final List<CartItemModel> items = [
-      CartItemModel(product: ProductModel(name: 'teste 1')),
-      CartItemModel(product: ProductModel(name: 'teste 2')),
-      CartItemModel(product: ProductModel(name: 'teste 3')),
-      CartItemModel(product: ProductModel(name: 'teste 4')),
-      CartItemModel(product: ProductModel(name: 'teste 5')),
-      CartItemModel(product: ProductModel(name: 'teste 6')),
+      CartItemModel(
+        product: ProductModel(name: 'teste 1', price: 12.0),
+        quantity: 2,
+      ),
+      CartItemModel(product: ProductModel(name: 'teste 2', price: 152.0)),
+      CartItemModel(
+        product: ProductModel(name: 'teste 3', price: 12.0),
+        quantity: 7,
+      ),
+      CartItemModel(product: ProductModel(name: 'teste 4', price: 16.0)),
+      CartItemModel(
+        product: ProductModel(name: 'teste 5', price: 111.0),
+        quantity: 3,
+      ),
+      CartItemModel(
+        product: ProductModel(name: 'teste 6', price: 11.0),
+        quantity: 5,
+      ),
     ];
 
     Widget _buildTotalPanel() {
@@ -79,10 +90,7 @@ class _KpCartScreenState extends State<KpCartScreen> {
                   size: 30,
                 );
 
-                return KpCartItem(
-                  cartItem,
-                  isLast: index == (items.length - 1),
-                );
+                return KpCartItem(cartItem);
               },
             ),
             const SizedBox(
