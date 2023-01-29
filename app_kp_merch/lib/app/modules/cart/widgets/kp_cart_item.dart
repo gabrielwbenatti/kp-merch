@@ -6,12 +6,10 @@ import 'package:app_kp_merch/app/utils/kp_theme.dart';
 class KpCartItem extends StatelessWidget {
   const KpCartItem(
     this.cartItem, {
-    this.isLast = false,
     super.key,
   });
 
   final CartItemModel cartItem;
-  final bool isLast;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +19,6 @@ class KpCartItem extends StatelessWidget {
           left: KpTheme.kDefaultPadding,
           right: KpTheme.kDefaultPadding,
           top: KpTheme.kDefaultPadding,
-          bottom: isLast ? KpTheme.kDefaultPadding : 0.0,
         ),
         child: Padding(
           padding: EdgeInsets.all(KpTheme.kDefaultPadding),
@@ -60,6 +57,7 @@ class KpCartItem extends StatelessWidget {
                       width: double.infinity,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -76,11 +74,11 @@ class KpCartItem extends StatelessWidget {
                               borderRadius: BorderRadius.circular(
                                   KpTheme.kDefaultRadius / 2),
                             ),
-                            padding: const EdgeInsets.all(4),
                             child: Row(
                               children: [
-                                const Icon(
-                                  Icons.remove_circle_outline,
+                                IconButton(
+                                  onPressed: () {},
+                                  icon: const Icon(Icons.remove_circle_outline),
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.symmetric(
@@ -90,8 +88,9 @@ class KpCartItem extends StatelessWidget {
                                     "${cartItem.quantity}",
                                   ),
                                 ),
-                                const Icon(
-                                  Icons.add_circle_outline,
+                                IconButton(
+                                  onPressed: () {},
+                                  icon: const Icon(Icons.add_circle_outline),
                                 ),
                               ],
                             ),
