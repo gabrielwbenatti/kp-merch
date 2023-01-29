@@ -18,7 +18,6 @@ class _KpCartScreenState extends State<KpCartScreen> {
   @override
   Widget build(BuildContext context) {
     int itemCount = 12;
-    var panelKey = GlobalKey();
 
     Widget _buildTotalPanel() {
       return Positioned(
@@ -26,7 +25,6 @@ class _KpCartScreenState extends State<KpCartScreen> {
         left: 0,
         right: 0,
         child: Container(
-          key: panelKey,
           padding: EdgeInsets.all(KpTheme.kDefaultPadding),
           margin: const EdgeInsets.all(5),
           width: double.infinity,

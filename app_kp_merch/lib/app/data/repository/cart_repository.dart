@@ -5,8 +5,5 @@ class CartRepository {
 
   List<CartItemModel> get items => _items;
 
-  void insertItem(CartItemModel cartItem) {
-    _items.add(cartItem);
-    print('Adicionado ao carrinho!');
-  }
+  void insertItem(CartItemModel cartItem) => _items.add(cartItem);
 }
