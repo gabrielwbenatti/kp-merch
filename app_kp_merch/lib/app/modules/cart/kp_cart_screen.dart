@@ -101,54 +101,75 @@ class _KpCartScreenState extends State<KpCartScreen> {
       );
     }
 
+    Widget buildEmptyCart() {
+      return Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const Text(
+              "Carrinho de compras vazio",
+            ),
+            OutlinedButton(
+              onPressed: () => Navigator.pop(context),
+              child: const Text("Voltar"),
+            ),
+          ],
+        ),
+      );
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: const Text(
           'Meu Carrinho',
         ),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            padding: EdgeInsets.only(
-              left: KpTheme.kDefaultPadding,
-              right: KpTheme.kDefaultPadding,
-              top: (KpTheme.kDefaultPadding / 2),
-              bottom: (KpTheme.kDefaultPadding / 2),
-            ),
-            child: Column(
+      body: (items.isEmpty)
+          ? buildEmptyCart()
+          : Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  "Resumo do Pedido",
-                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                        color: Theme.of(context).colorScheme.onSurface,
-                        fontWeight: FontWeight.bold,
+                Container(
+                  padding: EdgeInsets.only(
+                    left: KpTheme.kDefaultPadding,
+                    right: KpTheme.kDefaultPadding,
+                    top: (KpTheme.kDefaultPadding / 2),
+                    bottom: (KpTheme.kDefaultPadding / 2),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Resumo do Pedido",
+                        style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                              color: Theme.of(context).colorScheme.onSurface,
+                              fontWeight: FontWeight.bold,
+                            ),
                       ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: const [
+                          Text("Total do pedido"),
+                          Text("R\$ 271,66"),
+                        ],
+                      ),
+                      Text(
+                          "${items.length} ${items.length == 1 ? 'item' : 'itens'}"),
+                    ],
+                  ),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    Text("Total do pedido"),
-                    Text("R\$ 271,66"),
-                  ],
+                Expanded(
+                  child: ListView.builder(
+                    padding: EdgeInsets.only(bottom: KpTheme.kDefaultPadding),
+                    itemBuilder: (context, index) {
+                      return KpCartItem(items[index]);
+                    },
+                    itemCount: items.length,
+                  ),
                 ),
-                Text("${items.length} ${items.length == 1 ? 'item' : 'itens'}"),
               ],
             ),
-          ),
-          Expanded(
-            child: ListView.builder(
-              padding: EdgeInsets.only(bottom: KpTheme.kDefaultPadding),
-              itemBuilder: (context, index) {
-                return KpCartItem(items[index]);
-              },
-              itemCount: items.length,
-            ),
-          ),
-        ],
-      ),
     );
   }
 }
